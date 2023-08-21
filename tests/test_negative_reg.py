@@ -143,9 +143,7 @@ def test_get_registration_invalid_format_lastname(browser, lastname):
 @pytest.mark.reg
 @pytest.mark.negatvie
 @pytest.mark.parametrize("email", ["", "@", "@.", ".", generate_string_rus(20), f"{russian_chars()}@mail.ru", 88888],
-                         ids=['RTC-035-1) empty line', 'RTC-035-2) at', 'RTC-035-3) at point',
-                              'TRK-035-4) point', 'RTC-035-5) string', 'RTC-035-6) russian',
-                              'RTC-035-7) digits'])
+                         ids=['empty line', 'at', 'at point', 'point', 'string', 'russian', 'digits'])
 def test_get_registration_invalid_format_email(browser, email):
     page = AuthPage(browser)
     page.enter_reg_page()   # нажимаем на гиперссылку "Зарегистрироваться"
